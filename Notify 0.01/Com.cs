@@ -16,13 +16,13 @@ namespace Notify
         string UserId;
         string CurrentUser;
 
-        [Command("greet")]
+        [Command("greet")]                                      //Szimpla teszt parancs
         public async Task GreetCommand(CommandContext ctx)
         {
             await ctx.RespondAsync("Greetings! Thank you for executing me!");
         }
 
-        [Command("FVC")]
+        [Command("FVC")]    //Követési parancs(nincs kész)
         public async Task Teszt(CommandContext ctx, DiscordMember member)
         {
             bool statement = false;
@@ -52,13 +52,13 @@ namespace Notify
             }
         }
 
-        [Command("FVC")]
+        [Command("FVC")]  //argumentum bekérési hiba parancs, ha nem érkezik @mention tokenhoz
         public async Task Teszt(CommandContext ctx)
         {
             await ctx.RespondAsync("Wrong argument!\nPlease state the following parts of the command:\n-fvc @mention");
         }
 
-        [Command("IP")]                                                                                                           //Vicc
+        [Command("IP")]                         //Vicc, VOIP-os szolgáltatsnál nem tudunk IP-t szerezni :(
         public async Task tarja(CommandContext ctx, DiscordMember member)
         {
             Random vsz = new Random();
